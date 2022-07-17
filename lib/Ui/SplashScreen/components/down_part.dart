@@ -32,8 +32,9 @@ class DownPart extends StatelessWidget {
           DefaultButton(
             text: 'Continue',
             onPressed: () {
-              Navigator.of(context).pushNamed(
+              Navigator.of(context).pushNamedAndRemoveUntil(
                 registerRoute,
+                (route) => false,
               );
             },
           ),

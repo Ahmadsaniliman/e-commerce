@@ -86,42 +86,45 @@ class _LoginViewState extends State<LoginView> {
                             final email = _emailController.text;
                             final password = _passwordController.text;
                             try {
-                              final user = await FirebaseAuth.instance
+                              final credential = await FirebaseAuth.instance
                                   .signInWithEmailAndPassword(
                                 email: email,
                                 password: password,
                               );
-                              devtool.log(user.toString());
-                              final currUser =
-                                  FirebaseAuth.instance.currentUser;
-                              if (currUser!.emailVerified) {
-                                Navigator.of(context).pushNamedAndRemoveUntil(
-                                  mainScreenRoute,
-                                  (route) => false,
-                                );
-                              } else {
-                                Navigator.of(context).pushNamedAndRemoveUntil(
-                                  verifyEmailRoute,
-                                  (route) => false,
-                                );
-                              }
+                              devtool.log(credential.toString());
+                              //   final currUser =
+                              //       FirebaseAuth.instance.currentUser!;
+                              //   if (currUser.emailVerified) {
+                              //     Navigator.of(context).pushNamedAndRemoveUntil(
+                              //       mainScreenRoute,
+                              //       (route) => false,
+                              //     );
+                              //   } else {
+                              //     Navigator.of(context).pushNamedAndRemoveUntil(
+                              //       verifyEmailRoute,
+                              //       (route) => false,
+                              //     );
+                              //   }
                               Navigator.of(context).pushNamedAndRemoveUntil(
                                 mainScreenRoute,
                                 (route) => false,
                               );
                             } on FirebaseAuthException catch (e) {
-                              if (e.code == 'Wrong-Password') {
+                              if (e.code == 'user-not-found') {
                                 await showErrorDialog(
                                   context: context,
-                                  contentText: 'Wrong Passsword Used',
+                                  contentText: 'User Account not found',
                                 );
-                              } else if (e.code == 'User-Not-Exists') {
+                              } else if (e.code == 'wrong-password') {
                                 await showErrorDialog(
                                   context: context,
-                                  contentText: 'User Doess Not Exists',
+                                  contentText: 'Wrong password used',
                                 );
                               } else {
-                                devtool.log(e.toString());
+                                await showErrorDialog(
+                                  context: context,
+                                  contentText: 'Unknown error occured',
+                                );
                               }
                             } catch (_) {
                               devtool.log(_.toString());
