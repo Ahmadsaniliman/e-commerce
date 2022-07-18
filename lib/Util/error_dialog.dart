@@ -20,3 +20,27 @@ Future<void> showErrorDialog({
     ),
   );
 }
+
+Future<bool?> showLogOutDialog(BuildContext context) {
+  return showDialog<bool>(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: const Text('Logout'),
+      content: const Text('Are You Sure You Want To Logout'),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.of(context).pop(false);
+          },
+          child: const Text('Cancel'),
+        ),
+        TextButton(
+          onPressed: () {
+            Navigator.of(context).pop(true);
+          },
+          child: const Text('Yes'),
+        ),
+      ],
+    ),
+  );
+}
