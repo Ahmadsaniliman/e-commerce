@@ -1,4 +1,6 @@
+import 'package:e_commm/Ui/Home/components/category_card.dart';
 import 'package:e_commm/Ui/Home/components/pop_up_button.dart';
+import 'package:e_commm/Ui/Home/name_card.dart';
 import 'package:e_commm/constants/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +14,15 @@ class MainScreenView extends StatefulWidget {
 class _MainScreenViewState extends State<MainScreenView> {
   @override
   Widget build(BuildContext context) {
+    List categories = [
+      'Games',
+      'Women',
+      'Comedy',
+      'Sport',
+      'Men',
+      'Grocery',
+      'Education'
+    ];
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -28,14 +39,25 @@ class _MainScreenViewState extends State<MainScreenView> {
         ),
         child: Column(
           children: [
-            Container(
-              width: double.infinity,
-              height: 150,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15.0),
-                color: kPrimaryColor,
-              ),
-              child: Column(children : const [],),
+            const NameCard(),
+            CategoryCard(categories: categories),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('Most Popular Products'),
+                Container(
+                  height: 100,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  child: Stack(
+                    children: [
+                      Image.asset('assests/images/'),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
