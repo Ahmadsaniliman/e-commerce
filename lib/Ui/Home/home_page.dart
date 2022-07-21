@@ -1,4 +1,5 @@
 import 'package:e_commm/Ui/Home/components/category_card.dart';
+import 'package:e_commm/Ui/Home/components/p_category_card.dart';
 import 'package:e_commm/Ui/Home/components/pop_up_button.dart';
 import 'package:e_commm/Ui/Home/name_card.dart';
 import 'package:e_commm/constants/constants.dart';
@@ -41,26 +42,142 @@ class _MainScreenViewState extends State<MainScreenView> {
           children: [
             const NameCard(),
             CategoryCard(categories: categories),
+            const PopularCartegory(),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Most Popular Products'),
-                Container(
-                  height: 100,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  child: Stack(
-                    children: [
-                      Image.asset('assests/images/'),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      'More Products',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      'See More',
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: const [
+                      MoreProductCard(
+                        assests: 'assests/images/bag_1.png',
+                        name: 'Women"s Bag',
+                        price: '\$40.0',
+                      ),
+                      MoreProductCard(
+                        assests: 'assests/images/shoes2.png',
+                        name: 'Shoe',
+                        price: '\$90.0',
+                      ),
+                      MoreProductCard(
+                        assests: 'assests/images/tshirt.png',
+                        name: 'Tshirt',
+                        price: '\$40.0',
+                      ),
+                      MoreProductCard(
+                        assests: 'assests/images/images.png',
+                        name: 'dont know',
+                        price: '\$99.9',
+                      ),
+                      MoreProductCard(
+                        assests: 'assests/images/glap.png',
+                        name: 'Goalkepper glove',
+                        price: '\$40.0',
+                      ),
                     ],
                   ),
                 ),
               ],
+            )
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.all(10),
+        height: 65,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          color: kPrimaryColor,
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(10.0),
+            topLeft: Radius.circular(10.0),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: const [
+                Icon(Icons.home),
+                Text('Home'),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: const [
+                Icon(Icons.add_chart),
+                Text('Cart'),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: const [
+                Icon(Icons.person),
+                Text('Profile'),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: const [
+                Icon(Icons.shop),
+                Text('Products'),
+              ],
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class MoreProductCard extends StatelessWidget {
+  final String assests;
+  final String name;
+  final String price;
+  const MoreProductCard({
+    Key? key,
+    required this.assests,
+    required this.name,
+    required this.price,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(10.0),
+      width: 150,
+      child: Column(
+        children: [
+          AspectRatio(
+            aspectRatio: 1.2,
+            child: Image.asset(assests),
+          ),
+          Text(
+            name,
+            maxLines: 2,
+          ),
+          Text(price),
+          //   const Icon(Icons.add_chart),
+        ],
       ),
     );
   }
