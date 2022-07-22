@@ -1,2 +1,2 @@
 enum MenuActions { logout, history }
-enum AppAction { home, cart, profile, products }
+enum BottomNavigationAction { home, cart, profile, products }
