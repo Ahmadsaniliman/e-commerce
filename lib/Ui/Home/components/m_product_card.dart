@@ -1,3 +1,4 @@
+import 'package:e_commm/Ui/Product/product_details.dart';
 import 'package:flutter/material.dart';
 
 class MoreProductCard extends StatelessWidget {
@@ -13,22 +14,31 @@ class MoreProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10.0),
-      width: 150,
-      child: Column(
-        children: [
-          AspectRatio(
-            aspectRatio: 1.2,
-            child: Image.asset(assests),
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const ProductDetails(),
           ),
-          Text(
-            name,
-            maxLines: 2,
-          ),
-          Text(price),
-          //   const Icon(Icons.add_chart),
-        ],
+        );
+      },
+      child: Container(
+        padding: const EdgeInsets.all(10.0),
+        width: 150,
+        child: Column(
+          children: [
+            AspectRatio(
+              aspectRatio: 1.2,
+              child: Image.asset(assests),
+            ),
+            Text(
+              name,
+              maxLines: 2,
+            ),
+            Text(price),
+            //   const Icon(Icons.add_chart),
+          ],
+        ),
       ),
     );
   }

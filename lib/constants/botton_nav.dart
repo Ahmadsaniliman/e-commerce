@@ -1,4 +1,4 @@
-import 'package:e_commm/Ui/Details/product_details.dart';
+import 'package:e_commm/Ui/Details/product_page_details.dart';
 import 'package:e_commm/Ui/Home/home_page.dart';
 import 'package:e_commm/constants/constants.dart';
 import 'package:e_commm/constants/enums.dart';

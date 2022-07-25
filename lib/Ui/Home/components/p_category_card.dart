@@ -1,4 +1,5 @@
-import 'package:e_commm/Ui/Home/popular_card.dart';
+import 'package:e_commm/Ui/Home/components/popular_card.dart';
+import 'package:e_commm/Ui/Product/product_details.dart';
 import 'package:flutter/material.dart';
 
 class PopularCartegory extends StatelessWidget {
@@ -21,20 +22,47 @@ class PopularCartegory extends StatelessWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: const [
-              PopularCard(
-                images: 'assests/images/wireless headset.png',
-                name: 'headset',
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const ProductDetails(),
+                    ),
+                  );
+                },
+                child: const PopularCard(
+                  images: 'assests/images/wireless headset.png',
+                  name: 'headset',
+                ),
               ),
-              SizedBox(width: 25.0),
-              PopularCard(
-                images: 'assests/images/ps4_console_blue_1.png',
-                name: 'ps4 controller',
+              const SizedBox(width: 25.0),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const ProductDetails(),
+                    ),
+                  );
+                },
+                child: const PopularCard(
+                  images: 'assests/images/ps4_console_blue_1.png',
+                  name: 'ps4 controller',
+                ),
               ),
-              SizedBox(width: 25.0),
-              PopularCard(
-                images: 'assests/images/Image Popular Product 2.png',
-                name: 'Trouser',
+              const SizedBox(width: 25.0),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const ProductDetails(),
+                    ),
+                  );
+                },
+                child: const PopularCard(
+                  images: 'assests/images/Image Popular Product 2.png',
+                  name: 'Trouser',
+                ),
               ),
             ],
           ),
