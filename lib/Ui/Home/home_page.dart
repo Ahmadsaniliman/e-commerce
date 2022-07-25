@@ -9,7 +9,9 @@ import 'package:e_commm/constants/enums.dart';
 import 'package:flutter/material.dart';
 
 class MainScreenView extends StatelessWidget {
-  const MainScreenView({Key? key}) : super(key: key);
+  const MainScreenView({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

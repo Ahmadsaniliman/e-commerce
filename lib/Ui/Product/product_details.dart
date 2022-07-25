@@ -7,7 +7,9 @@ class ProductDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: const [],
+        children: const [
+          // Image.asset(product.images),
+        ],
       ),
     );
   }

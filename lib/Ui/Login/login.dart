@@ -1,3 +1,4 @@
+import 'package:e_commm/Ui/Home/home_page.dart';
 import 'package:e_commm/Util/default_button.dart';
 import 'package:e_commm/Util/error_dialog.dart';
 import 'package:e_commm/Util/text_form_field.dart';
@@ -108,6 +109,11 @@ class _LoginViewState extends State<LoginView> {
                               Navigator.of(context).pushNamedAndRemoveUntil(
                                 mainScreenRoute,
                                 (route) => false,
+                              );
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => const MainScreenView(),
+                                ),
                               );
                             } on FirebaseAuthException catch (e) {
                               if (e.code == 'user-not-found') {
