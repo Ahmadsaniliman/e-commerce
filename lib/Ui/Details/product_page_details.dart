@@ -9,6 +9,7 @@ class ProductDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final Product product;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(
