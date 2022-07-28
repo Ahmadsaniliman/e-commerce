@@ -1,5 +1,7 @@
+import 'package:e_commm/Ui/Cart/cart.dart';
 import 'package:e_commm/Ui/Details/product_page_details.dart';
 import 'package:e_commm/Ui/Home/home_page.dart';
+import 'package:e_commm/Ui/Profile/profile.dart';
 import 'package:e_commm/constants/constants.dart';
 import 'package:e_commm/constants/enums.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +58,38 @@ class BottomNav extends StatelessWidget {
             ),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const ProductDetailsPage(),
+                ),
+              );
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Icon(Icons.shop,
+                    color: selectedMenu == BottomNavigationAction.products
+                        ? Colors.white
+                        : kSecondaryColor),
+                Text(
+                  'Products',
+                  style: TextStyle(
+                      color: selectedMenu == BottomNavigationAction.products
+                          ? Colors.white
+                          : kSecondaryColor),
+                ),
+              ],
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const CartView(),
+                ),
+              );
+            },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -78,7 +111,13 @@ class BottomNav extends StatelessWidget {
             ),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const ProfileView(),
+                ),
+              );
+            },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -90,31 +129,6 @@ class BottomNav extends StatelessWidget {
                   'Profile',
                   style: TextStyle(
                       color: selectedMenu == BottomNavigationAction.profile
-                          ? Colors.white
-                          : kSecondaryColor),
-                ),
-              ],
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const ProductDetailsPage(),
-                ),
-              );
-            },
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Icon(Icons.shop,
-                    color: selectedMenu == BottomNavigationAction.products
-                        ? Colors.white
-                        : kSecondaryColor),
-                Text(
-                  'Products',
-                  style: TextStyle(
-                      color: selectedMenu == BottomNavigationAction.products
                           ? Colors.white
                           : kSecondaryColor),
                 ),

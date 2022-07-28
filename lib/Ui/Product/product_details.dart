@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 
 class ProductDetails extends StatelessWidget {
-  const ProductDetails({Key? key}) : super(key: key);
+  const ProductDetails({
+    Key? key,
 
+    //  required this.productss
+  }) : super(key: key);
+
+  // final Product productss;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: const [
-          // Image.asset(product.images),
+          // Image.asset(productss.title),
         ],
       ),
     );

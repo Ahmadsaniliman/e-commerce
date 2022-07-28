@@ -15,6 +15,7 @@ class MainScreenView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final Product products;
     List categories = [
       'Games',
       'Women',
