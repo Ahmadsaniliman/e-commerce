@@ -3,8 +3,11 @@ import 'package:e_commm/Ui/Product/product_details.dart';
 import 'package:flutter/material.dart';
 
 class PopularCartegory extends StatelessWidget {
+  // final Product product;
+
   const PopularCartegory({
     Key? key,
+    // required this.product,
   }) : super(key: key);
 
   @override

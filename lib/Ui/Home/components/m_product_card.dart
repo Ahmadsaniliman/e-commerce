@@ -5,6 +5,7 @@ class MoreProductCard extends StatelessWidget {
   final String assests;
   final String name;
   final String price;
+
   const MoreProductCard({
     Key? key,
     required this.assests,

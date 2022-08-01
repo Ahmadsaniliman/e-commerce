@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class PopularCard extends StatelessWidget {
   final String images;
   final String name;
+
   const PopularCard({
     Key? key,
     required this.images,

@@ -8,14 +8,19 @@ import 'package:e_commm/constants/constants.dart';
 import 'package:e_commm/constants/enums.dart';
 import 'package:flutter/material.dart';
 
-class MainScreenView extends StatelessWidget {
+class MainScreenView extends StatefulWidget {
   const MainScreenView({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<MainScreenView> createState() => _MainScreenViewState();
+}
+
+class _MainScreenViewState extends State<MainScreenView> {
+  @override
   Widget build(BuildContext context) {
-    // final Product products;
+    // final Product product;
     List categories = [
       'Games',
       'Women',
@@ -43,7 +48,9 @@ class MainScreenView extends StatelessWidget {
           children: [
             const NameCard(),
             CategoryCard(categories: categories),
-            const PopularCartegory(),
+            const PopularCartegory(
+                //   product: product,
+                ),
             const HomePageBottom()
           ],
         ),

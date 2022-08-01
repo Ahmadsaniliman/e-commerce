@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+// import '../../Model/model.dart';
+
 class ProductDetails extends StatelessWidget {
   const ProductDetails({
     Key? key,
 
-    //  required this.productss
+    // required this.productss
   }) : super(key: key);
 
   // final Product productss;
@@ -13,7 +15,7 @@ class ProductDetails extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: const [
-          // Image.asset(productss.title),
+          // Image.asset(productss.images),
         ],
       ),
     );

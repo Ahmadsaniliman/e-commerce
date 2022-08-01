@@ -1,3 +1,4 @@
+import 'package:e_commm/Ui/Details/product_page_details.dart';
 import 'package:e_commm/Ui/Home/components/m_product_card.dart';
 import 'package:flutter/material.dart';
 
@@ -12,18 +13,27 @@ class HomePageBottom extends StatelessWidget {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Text(
+          children: [
+            const Text(
               'More Products',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Text(
-              'See More',
-              style: TextStyle(
-                decoration: TextDecoration.underline,
-                fontWeight: FontWeight.bold,
+            InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const ProductDetailsPage(),
+                  ),
+                );
+              },
+              child: const Text(
+                'See More',
+                style: TextStyle(
+                  decoration: TextDecoration.underline,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],

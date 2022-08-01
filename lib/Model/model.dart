@@ -26,7 +26,7 @@ List<Product> products = [
     price: 60.0,
     title: 'Bag',
     description: 'Womens Lovely And Adorable bag',
-    images: 'assets/images/bag_5.png',
+    images: 'assests/images/bag_5.png',
   ),
   Product(
     price: 90,
@@ -38,13 +38,13 @@ List<Product> products = [
     price: 45,
     title: 'R-Shoe',
     description: 'A Beautiful mens shoe',
-    images: 'assests/images/shoe_2.jpg',
+    images: 'assests/images/shoes2.png',
   ),
   Product(
     price: 90.99,
-    title: 'B Shoe',
+    title: 'B T-shirt',
     description: 'A Beautiful mens shoe',
-    images: 'assests/images/blach_shoe.jpg',
+    images: 'assests/images/product 1 image.png',
   ),
   Product(
     price: 80.99,
@@ -54,27 +54,27 @@ List<Product> products = [
   ),
   Product(
     price: 80.99,
-    title: 'HeadPhone',
+    title: 'Bag',
     description: 'Unbreakable HeadPhone',
-    images: 'assests/images/wireless_headset.png',
+    images: 'assests/images/bag_1.png',
   ),
   Product(
     price: 80.99,
     title: 'psp Controller',
     description: 'Ps4 wireless controller',
-    images: 'assests/images/psp.jpg',
+    images: 'assests/images/ps4_console_white_1.png',
   ),
   Product(
     price: 60.99,
     title: 'W-Shoe',
     description: 'A Beautiful mens shoe',
-    images: 'assests/images/shoe_4.jpg',
+    images: 'assests/images/shoes2.png',
   ),
   Product(
     price: 40.99,
     title: 'N-Shoe',
     description: 'A Beautiful mens shoe',
-    images: 'assests/images/shoe_5.jpg',
+    images: 'assests/images/shoes2.png',
   ),
   Product(
     price: 40.99,
