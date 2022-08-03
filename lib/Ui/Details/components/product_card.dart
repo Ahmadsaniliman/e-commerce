@@ -1,18 +1,21 @@
 import 'package:e_commm/Model/model.dart';
-import 'package:e_commm/Ui/Product/product_details.dart';
 import 'package:e_commm/constants/constants.dart';
 import 'package:flutter/material.dart';
+
+import '../../Product/product_details.dart';
 
 class ProductCardGrid extends StatelessWidget {
   const ProductCardGrid({
     Key? key,
+    // required this.product,
   }) : super(key: key);
 
+  // final Product product;
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GridView.builder(
-        itemCount: products.length,
+        itemCount: demoProducts.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 0.75,
           crossAxisCount: 2,
@@ -23,7 +26,9 @@ class ProductCardGrid extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => const ProductDetails(),
+                builder: (context) => ProductDetails(
+                  product: demoProducts[index],
+                ),
               ),
             );
           },
@@ -38,11 +43,11 @@ class ProductCardGrid extends StatelessWidget {
               children: [
                 Expanded(
                   child: Image.asset(
-                    products[index].images,
+                    demoProducts[index].images,
                     width: 100,
                   ),
                 ),
-                Text(products[index].title),
+                Text(demoProducts[index].title),
                 const SizedBox(height: 5.0),
                 Container(
                   padding: const EdgeInsets.all(10.0),

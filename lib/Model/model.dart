@@ -15,7 +15,7 @@ class Product {
   });
 }
 
-List<Product> products = [
+List<Product> demoProducts = [
   Product(
     price: 40.0,
     title: 'Bag',

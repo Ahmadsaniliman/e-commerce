@@ -20,7 +20,6 @@ class MainScreenView extends StatefulWidget {
 class _MainScreenViewState extends State<MainScreenView> {
   @override
   Widget build(BuildContext context) {
-    // final Product product;
     List categories = [
       'Games',
       'Women',
@@ -48,9 +47,7 @@ class _MainScreenViewState extends State<MainScreenView> {
           children: [
             const NameCard(),
             CategoryCard(categories: categories),
-            const PopularCartegory(
-                //   product: product,
-                ),
+            const PopularCartegory(),
             const HomePageBottom()
           ],
         ),
