@@ -54,7 +54,7 @@ class _IncrementCounterState extends State<IncrementCounter> {
                   child: TextButton(
                     onPressed: () {
                       setState(() {
-                        if (index >= 0) {
+                        if (index > 0) {
                           index--;
                         }
                       });
@@ -68,7 +68,10 @@ class _IncrementCounterState extends State<IncrementCounter> {
                     ),
                   ),
                 ),
-                Text(index.toString()),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                  child: Text(index.toString()),
+                ),
                 Container(
                   height: 40.0,
                   width: 40.0,

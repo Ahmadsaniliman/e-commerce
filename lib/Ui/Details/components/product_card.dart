@@ -48,6 +48,7 @@ class ProductCardGrid extends StatelessWidget {
                   ),
                 ),
                 Text(demoProducts[index].title),
+                Text('\$ ${demoProducts[index].price.toString()}'),
                 const SizedBox(height: 5.0),
                 Container(
                   padding: const EdgeInsets.all(10.0),

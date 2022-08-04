@@ -1,3 +1,4 @@
+import 'package:e_commm/Model/default_cart.dart';
 import 'package:e_commm/constants/botton_nav.dart';
 import 'package:e_commm/constants/constants.dart';
 import 'package:e_commm/constants/enums.dart';
@@ -19,12 +20,13 @@ class CartView extends StatelessWidget {
           vertical: 20.0,
           horizontal: 15.0,
         ),
-        child: Column(
-          children: const [
-            ProductCart(),
-            ProductCart(),
-            ProductCart(),
-          ],
+        child: ListView.builder(
+          itemCount: defaultcart.length,
+          itemBuilder: (context, index) => ProductCart(
+            image: defaultcart[index].images,
+            name: defaultcart[index].title,
+            price: defaultcart[index].price.toString(),
+          ),
         ),
       ),
       bottomNavigationBar: const BottomNav(
@@ -37,7 +39,14 @@ class CartView extends StatelessWidget {
 class ProductCart extends StatelessWidget {
   const ProductCart({
     Key? key,
+    required this.name,
+    required this.price,
+    required this.image,
   }) : super(key: key);
+
+  final String name;
+  final String price;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -77,22 +86,22 @@ class ProductCart extends StatelessWidget {
               width: 130,
               decoration: const BoxDecoration(color: kSecondaryColor),
               child: Image.asset(
-                'assests/images/tshirt.png',
+                image,
               ),
             ),
             const SizedBox(width: 20.0),
             Column(
-              children: const [
+              children: [
                 Text(
-                  'Wireless HeadSet',
+                  name,
                   maxLines: 2,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     // fontSize: 20.0,
                   ),
                 ),
-                SizedBox(height: 10.0),
-                Text('\$ 40.0'),
+                const SizedBox(height: 10.0),
+                Text(price),
               ],
             ),
           ],

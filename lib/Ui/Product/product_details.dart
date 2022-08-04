@@ -23,9 +23,13 @@ class ProductDetails extends StatelessWidget {
             ProductImage(product: product),
             ProdDesc(product: product),
             const IncrementCounter(),
-            DefaultButton(
-              text: 'Add To Cart',
-              onPressed: () {},
+            const SizedBox(height: 30.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: DefaultButton(
+                text: 'Add To Cart',
+                onPressed: () {},
+              ),
             ),
           ],
         ),

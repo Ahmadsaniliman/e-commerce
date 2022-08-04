@@ -1,3 +1,4 @@
+import 'package:e_commm/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class ColorDot extends StatelessWidget {
@@ -19,8 +20,10 @@ class ColorDot extends StatelessWidget {
       child: Container(
         height: 25.0,
         width: 25.0,
-        decoration:
-            const BoxDecoration(color: Colors.green, shape: BoxShape.circle),
+        decoration: const BoxDecoration(
+          color: kPrimaryColor,
+          shape: BoxShape.circle,
+        ),
       ),
     );
   }

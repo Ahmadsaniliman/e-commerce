@@ -20,12 +20,24 @@ class ProdDesc extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            product.title,
-            style: const TextStyle(
-              fontSize: 30.0,
-              fontWeight: FontWeight.bold,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                product.title,
+                style: const TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                '\$ ${product.price.toString()}',
+                style: const TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 10.0),
           const Text(
