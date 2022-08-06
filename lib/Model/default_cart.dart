@@ -4,8 +4,10 @@ class DefaultCart {
   final String title, description;
   final String images;
   final double rating, price;
+  final int id;
 
   DefaultCart({
+    required this.id,
     this.rating = 0.0,
     required this.price,
     required this.title,
@@ -16,18 +18,21 @@ class DefaultCart {
 
 List<Product> defaultcart = [
   Product(
+    id: 0,
     price: 80.99,
     title: 'psp Controller',
     description: 'Ps4 wireless controller',
     images: 'assests/images/ps4_console_white_1.png',
   ),
   Product(
+    id: 1,
     price: 80.99,
     title: 'Bag',
     description: 'Unbreakable HeadPhone',
     images: 'assests/images/bag_1.png',
   ),
   Product(
+    id: 2,
     price: 16.99,
     title: 'Trouser',
     description: 'Mens Trouser',

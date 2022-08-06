@@ -16,18 +16,21 @@ class PopularProduct {
 
 List<Product> popularProd = [
   Product(
+    id: 0,
     price: 80.99,
     title: 'psp Controller',
     description: 'Ps4 wireless controller',
     images: 'assests/images/ps4_console_white_1.png',
   ),
   Product(
+    id: 1,
     price: 80.99,
     title: 'Bag',
     description: 'Unbreakable HeadPhone',
     images: 'assests/images/bag_1.png',
   ),
   Product(
+    id: 2,
     price: 16.99,
     title: 'Trouser',
     description: 'Mens Trouser',

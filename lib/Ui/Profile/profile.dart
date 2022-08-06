@@ -1,4 +1,5 @@
 import 'package:e_commm/Ui/Profile/components/profile_image.dart';
+import 'package:e_commm/Util/default_button.dart';
 import 'package:e_commm/Util/text_form_field.dart';
 import 'package:e_commm/constants/botton_nav.dart';
 import 'package:e_commm/constants/constants.dart';
@@ -79,12 +80,9 @@ class _ProfileViewState extends State<ProfileView> {
                 iconData: const Icon(Icons.mark_email_unread_sharp),
               ),
               const SizedBox(height: 25.0),
-              FormTextField(
-                label: 'Nick Name',
-                obscureText: false,
-                hintText: 'Enter Your Nick Name',
-                controller: _nickNameController,
-                iconData: const Icon(Icons.people),
+              DefaultButton(
+                text: 'Submit',
+                onPressed: () {},
               ),
             ],
           ),
