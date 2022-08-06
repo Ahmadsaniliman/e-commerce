@@ -1,3 +1,5 @@
+import 'package:e_commm/Auth/auth_services.dart';
+import 'package:e_commm/Backend/backend.dart';
 import 'package:e_commm/Ui/Profile/components/profile_image.dart';
 import 'package:e_commm/Util/default_button.dart';
 import 'package:e_commm/Util/text_form_field.dart';
@@ -18,6 +20,8 @@ class _ProfileViewState extends State<ProfileView> {
   late final TextEditingController _emailController;
   late final TextEditingController _lastNameController;
   late final TextEditingController _nickNameController;
+  late final Backend _backend;
+  String get userId => AuthServices.fromFirebase().currentUser!.id;
 
   @override
   void initState() {
@@ -25,6 +29,7 @@ class _ProfileViewState extends State<ProfileView> {
     _emailController = TextEditingController();
     _lastNameController = TextEditingController();
     _nickNameController = TextEditingController();
+    _backend = Backend();
     super.initState();
   }
 
@@ -82,7 +87,11 @@ class _ProfileViewState extends State<ProfileView> {
               const SizedBox(height: 25.0),
               DefaultButton(
                 text: 'Submit',
-                onPressed: () {},
+                onPressed: () async {
+                  await _backend.createProfile(
+                    userId: userId,
+                  );
+                },
               ),
             ],
           ),
