@@ -10,6 +10,7 @@ class CartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final Backend backend;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cart'),

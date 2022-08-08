@@ -7,6 +7,7 @@ import 'package:e_commm/constants/botton_nav.dart';
 import 'package:e_commm/constants/constants.dart';
 import 'package:e_commm/constants/enums.dart';
 import 'package:flutter/material.dart';
+import 'dart:developer' as devtool show log;
 
 class ProfileView extends StatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -88,8 +89,16 @@ class _ProfileViewState extends State<ProfileView> {
               DefaultButton(
                 text: 'Submit',
                 onPressed: () async {
+                  final email = _emailController.text;
+                  final firstName = _firstNameController.text;
+                  final lastName = _lastNameController.text;
+                  devtool.log(email);
+                  devtool.log(firstName);
+                  devtool.log(lastName);
                   await _backend.createProfile(
-                    userId: userId,
+                    email: email,
+                    firstName: firstName,
+                    lastName: lastName,
                   );
                 },
               ),

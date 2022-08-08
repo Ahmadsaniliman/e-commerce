@@ -13,11 +13,12 @@ class Backend {
   final user = FirebaseFirestore.instance.collection('user');
 
   Future<Person> createProfile({
-    required String userId,
+    required String email,
+    required String firstName,
+    required String lastName,
   }) async {
     try {
       await user.add({
-        userId: userId,
         userEmailField: '',
         // ignore: equal_keys_in_map
         userFirstNameField: '',
@@ -26,10 +27,10 @@ class Backend {
       });
 
       return Person(
-        userId: userId,
         firstName: '',
         email: '',
         lastName: '',
+        userId: '',
       );
     } catch (e) {
       throw CouldNotCreateProfileException;
